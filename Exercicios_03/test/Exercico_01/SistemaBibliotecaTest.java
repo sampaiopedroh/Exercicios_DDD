@@ -22,10 +22,10 @@ public class SistemaBibliotecaTest {
         Livro livro2 = new Livro("1984", "George Orwell", "978-8525055059");
         biblioteca.adicionarLivro(livro1);
         biblioteca.adicionarLivro(livro2);
-        biblioteca.removerLivro("978-8535928089"); // Remove Dom Quixote
+        biblioteca.removerLivro("978-8535928089");
         List<Livro> livros = biblioteca.getLivros();
         assertEquals(1, livros.size());
-        assertEquals(livro2, livros.get(0));  // Verifica se o livro restante é 1984.
+        assertEquals(livro2, livros.get(0));
     }
 
     @Test
@@ -66,9 +66,9 @@ public class SistemaBibliotecaTest {
         biblioteca.registrarMembro(membro);
         biblioteca.registrarEmprestimo(livro, membro, "2024-07-26");
 
-        biblioteca.devolverLivro("978-8535928089"); // Devolve o livro
+        biblioteca.devolverLivro("978-8535928089");
 
         List<Emprestimo> emprestimos = biblioteca.getEmprestimos();
-        assertEquals(0, emprestimos.size()); // Verifica se a lista de empréstimos está vazia
+        assertEquals(0, emprestimos.size());
     }
 }
